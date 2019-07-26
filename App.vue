@@ -1,11 +1,9 @@
 <template>
   <div>
-    <my-comp v-slot="slotProps">
-      This is Slot! ({{slotProps.x}},{{slotProps.y}})
-    </my-comp>
-
     <svg-canvas v-slot="slotProps">
-      <circle fill="white" stroke="black" :cx="slotProps.x" :cy="slotProps.y" :r="10"></circle>
+      <svg-draggable v-slot="drag" @change="onChange">
+        <circle fill="white" stroke="black" cx="0" cy="0" :r="10" :selected="drag.selected"></circle>
+      </svg-draggable>
     </svg-canvas>
 
   </div>
@@ -13,19 +11,30 @@
 <script>
 import MyComp from "./MyComp.vue"
 import SvgCanvas from "./SvgCanvas.vue"
+import SvgDraggable from "./SvgDraggable.vue"
 export default {
   components: {
     MyComp,
-    SvgCanvas
+    SvgCanvas,
+    SvgDraggable
   },
   data() {
     return {};
+  },
+  methods: {
+    onChange(payload){
+      console.log(payload)
+    }
   }
 };
 </script>
 <style>
 .canv{
   border: 1px solid black;
+}
+
+circle:selected{
+  fill: gray;
 }
 
 </style>
