@@ -5,3 +5,5 @@
 ## License
 
 MIT
+
+![](screenshot.png)
