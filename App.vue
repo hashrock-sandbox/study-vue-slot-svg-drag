@@ -5,7 +5,7 @@
     </my-comp>
 
     <svg-canvas v-slot="slotProps">
-      <rect :x="slotProps.x" :y="slotProps.y" width=10 height=10>
+      <circle fill="white" stroke="black" :cx="slotProps.x" :cy="slotProps.y" :r="10"></circle>
     </svg-canvas>
 
   </div>
