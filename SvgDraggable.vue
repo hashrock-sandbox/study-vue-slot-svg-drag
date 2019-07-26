@@ -5,11 +5,17 @@
 </template>
 
 <script>
+//座標変換とOffsetを引き剥がしたい
+//イベントをシンプルにchangeに置き換えたい
+
 export default {
+    props: {
+        point: Object
+    },
     data(){
         return {
-            x: -1,
-            y: -1,
+            x: this.point.x,
+            y: this.point.y,
             selected: false,
         }
     },
