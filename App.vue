@@ -42,11 +42,7 @@ export default {
     };
   },
   methods: {
-    onChange(payload) {
-      console.log(payload);
-    },
     updatePoint(obj, payload) {
-      // console.log(obj, payload)
       obj.x = payload.x;
       obj.y = payload.y;
     }
