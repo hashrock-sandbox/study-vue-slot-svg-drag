@@ -4,16 +4,19 @@
       This is Slot! ({{slotProps.x}},{{slotProps.y}})
     </my-comp>
 
-    <svg class="canv" width=400 height=400 viewBox="0 0 400 400">
-      <rect x=0 y=0 width=10 height=10>
-    </svg>
+    <svg-canvas v-slot="slotProps">
+      <rect :x="slotProps.x" :y="slotProps.y" width=10 height=10>
+    </svg-canvas>
+
   </div>
 </template>
 <script>
 import MyComp from "./MyComp.vue"
+import SvgCanvas from "./SvgCanvas.vue"
 export default {
   components: {
-    MyComp
+    MyComp,
+    SvgCanvas
   },
   data() {
     return {};
